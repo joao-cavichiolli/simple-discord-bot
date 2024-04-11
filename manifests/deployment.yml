@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: bot 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bot
+  template:
+    metadata:
+      labels:
+        app: bot 
+    spec:
+      containers:
+        - name: bot 
+          image: acrcursolaepi.azurecr.io/bot
+          ports:
+          - containerPort: 3000
